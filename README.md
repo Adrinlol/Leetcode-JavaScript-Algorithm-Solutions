@@ -4,7 +4,7 @@ An algorithm is a series of step-by-step instructions that describe how to do so
 
 To write an effective algorithm, it helps to break a problem down into smaller parts and think carefully about how to solve each part with code.
 
-This repository contains JavaScript based examples that will teach you the fundamentals of algorithmic thinking by writing functions that do everything from converting temperatures to handling complex 2D arrays.
+This repository contains JavaScript algorithm examples and solutions from Leetcode.
 
 All of these examples are from FreeCodeCamp's [problemset](https://leetcode.com/problemset/all/).
 
@@ -42,3 +42,32 @@ Output: [0, 1];
 - -109 <= nums[i] <= 109
 - -109 <= target <= 109
 - **Only one valid answer exists.**
+
+### Solution 1
+
+```js
+var twoSum = function (nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+};
+```
+
+### Solution 2
+
+```js
+var twoSum = function (nums, target) {
+  let numsStorage = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (numsStorage[nums[i]] === undefined) {
+      numsStorage[target - nums[i]] = i;
+    } else {
+      return [numsStorage[nums[i]], i];
+    }
+  }
+};
+```
