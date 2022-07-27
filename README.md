@@ -200,32 +200,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 - s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 - It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
-## **Solution 1**
-
-```js
-var romanToInt = function (s) {
-  let result = 0;
-  const inputArray = Array.of(...s);
-  const romanVal = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
-  const inputsVal = [];
-
-  inputArray.forEach((item) => {
-    inputsVal.push(romanVal[item]);
-  });
-
-  for (let i = 0; i < inputArray.length; i++) {
-    if (inputsVal[i] < inputsVal[i + 1]) {
-      result -= inputsVal[i];
-    } else {
-      result += inputsVal[i];
-    }
-  }
-
-  return result;
-};
-```
-
-## **Solution 2**
+## **Solution**
 
 ```js
 var romanToInt = (s) => {
