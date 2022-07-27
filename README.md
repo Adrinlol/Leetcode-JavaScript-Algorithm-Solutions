@@ -45,6 +45,10 @@ Output: [0, 1];
 
 ### Solution 1
 
+The space complexity for this solution is a constant O(1).
+
+The time complexity for this solution is O(N)^2, as we are looping over the array twice.
+
 ```js
 var twoSum = function (nums, target) {
   for (let i = 0; i < nums.length; i++) {
@@ -56,6 +60,8 @@ var twoSum = function (nums, target) {
   }
 };
 ```
+
+To improve the first solution we can improve time complexity by sacrificing space and creating an object and storing the difference between the index of nums array and the target value.
 
 ### Solution 2
 
