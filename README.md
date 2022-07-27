@@ -63,6 +63,10 @@ var twoSum = function (nums, target) {
 
 To improve the first solution we can improve time complexity by sacrificing space and creating an object and storing the difference between the index of nums array and the target value.
 
+The space complexity for this solution is O(N).
+
+The time complexity for this solution is O(N).
+
 ### Solution 2
 
 ```js
